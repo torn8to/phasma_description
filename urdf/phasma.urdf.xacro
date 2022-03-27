@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot name="phasma" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find alphasense_description)/urdf/alphasense.urdf.xacro" />
+  <xacro:include filename="$(find hesai_description)/urdf/hesai.urdf.xacro" />
+  <link name="base" />
+  <xacro:alphasense parent="base">
+    <origin xyz="-65.210e-3 -0.109e-3 177.0e-3" rpy="0 0 0" />
+  </xacro:alphasense>
+
+  <link name="body">
+    <visual>
+      <geometry>
+        <mesh filename="package://phasma_description/urdf/meshes/phasma_body.dae" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="body_to_base_mount" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="body" />
+  </joint>
+
+  <xacro:hesai_device parent="base">
+    <origin xyz="-59.957e-3 0.015e-3 93.0e-3" rpy="0 0 0"/>
+  </xacro:hesai_device>
+  
+</robot>

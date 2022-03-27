@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>phasma_description</name>
+  <version>0.0.1</version>
+  <description>URDF Model of the HILTI Phasma</description>
+
+  <maintainer email="mcamurri@robots.ox.ac.uk">Marco Camurri</maintainer>
+  
+  <author email="mcamurri@robots.ox.ac.uk">Marco Camurri</author>
+  <author email="lintong@robots.ox.ac.uk">Lintong Zhang</author>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>hesai_description</depend>
+  <depend>alphasense_description</depend>
+  <depend>xacro</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>
