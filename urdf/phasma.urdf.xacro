@@ -4,10 +4,12 @@
   <xacro:include filename="$(find alphasense_description)/urdf/alphasense.urdf.xacro" />
   <xacro:include filename="$(find hesai_description)/urdf/hesai.urdf.xacro" />
 
-  <link name="base" />
+  <link name="tip" />
+
+  <xacro:property name="alphasense_calibration" value="$(find phasma_description)/urdf/calibrations/20220322_calibration.yaml" />
   
-  <xacro:alphasense parent="base">
-    <origin xyz="-65.253e-3 0.0 177.0e-3" rpy="0 0 0" />
+  <xacro:alphasense parent="tip" calib_file="${alphasense_calibration}">
+    <origin xyz="-65.253e-3 0.0 179.0e-3" rpy="0 0 0" />
   </xacro:alphasense>
 
   <link name="body">
@@ -17,14 +19,25 @@
       </geometry>
     </visual>
   </link>
-  <joint name="body_to_base_mount" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="base" />
+
+  <joint name="tip_to_body" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="tip" />
     <child link="body" />
   </joint>
 
-  <xacro:hesai_device parent="base">
-    <origin xyz="-60.0e-3 0.0 93.0e-3" rpy="0 0 0"/>
+  <!-- This is the frame in which the ground truth is generated -->
+  <link name="base"/>
+
+  <!-- The base frame is coincident with the alphasense IMU but with the usual robot convention -->
+  <joint name="alphasense_imu_to_base" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="${-pi} 0.0 0.0" />
+    <parent link="alphasense_imu"/>
+    <child link="base"/>
+  </joint>
+
+  <xacro:hesai_device parent="tip">
+    <origin xyz="-60.0e-3 0.0 95.0e-3" rpy="0 0 0"/>
   </xacro:hesai_device>
   
 </robot>
