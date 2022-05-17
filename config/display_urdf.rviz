@@ -73,6 +73,10 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        PandarXT-32:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         alphasense_imu:
           Alpha: 1
           Show Axes: false
@@ -122,10 +126,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        hesai_origin:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         tip:
           Alpha: 1
           Show Axes: false
@@ -162,10 +162,10 @@ Visualization Manager:
     - Alpha: 0.800000011920929
       Class: rviz/Axes
       Enabled: true
-      Length: 0.029999999329447746
+      Length: 0.10000000149011612
       Name: HesaiXT32 Lidar Frame
       Radius: 0.0010000000474974513
-      Reference Frame: hesai_origin
+      Reference Frame: PandarXT-32
       Value: true
     - Alpha: 0.800000011920929
       Class: rviz/Axes
@@ -251,7 +251,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.3313813805580139
+      Distance: 0.4393240511417389
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -259,17 +259,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.10401562601327896
-        Y: 0.03258412331342697
-        Z: 0.1790127158164978
+        X: -0.08527376502752304
+        Y: 0.033262841403484344
+        Z: 0.14511239528656006
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.12979656457901
+      Pitch: 0.4447964131832123
       Target Frame: <Fixed Frame>
-      Yaw: 6.161749839782715
+      Yaw: 0.5685657262802124
     Saved: ~
 Window Geometry:
   Displays:

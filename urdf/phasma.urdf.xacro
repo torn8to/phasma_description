@@ -56,7 +56,7 @@ limitations under the License.
     <child link="base"/>
   </joint>
 
-  <xacro:hesai_device parent="tip">
+  <xacro:hesai_device parent="tip" lidar_frame="PandarXT-32">
     <origin xyz="-60.0e-3 0.0 95.0e-3" rpy="0 0 0"/>
   </xacro:hesai_device>
   
