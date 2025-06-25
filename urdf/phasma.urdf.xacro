@@ -21,12 +21,12 @@ limitations under the License.
 
 <robot name="phasma" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
-  <xacro:include filename="$(find alphasense_description)/urdf/alphasense.urdf.xacro" />
-  <xacro:include filename="$(find hesai_description)/urdf/hesai.urdf.xacro" />
+  <xacro:include filename="$(find-pkg-share alphasense_description)/urdf/alphasense.urdf.xacro" />
+  <xacro:include filename="$(find-pkg-share hesai_description)/urdf/hesai.urdf.xacro" />
 
   <link name="tip" />
 
-  <xacro:property name="alphasense_calibration" value="$(find phasma_description)/urdf/calibrations/20220322_calibration.yaml" />
+  <xacro:property name="alphasense_calibration" value="$(find-pkg-share phasma_description)/urdf/calibrations/20220322_calibration.yaml" />
   
   <xacro:alphasense parent="tip" calib_file="${alphasense_calibration}">
     <origin xyz="-65.253e-3 0.0 179.0e-3" rpy="0 0 0" />
@@ -35,7 +35,7 @@ limitations under the License.
   <link name="body">
     <visual>
       <geometry>
-        <mesh filename="package://phasma_description/urdf/meshes/phasma_body.dae" />
+        <mesh filename="$(find-pkg-share phasma_description)/urdf/meshes/phasma_body.dae" />
       </geometry>
     </visual>
   </link>
